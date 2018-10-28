@@ -10,6 +10,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
@@ -54,6 +55,9 @@ public class MainApp extends Application {
         this.primaryStage = primaryStage;
         this.primaryStage.setTitle("AddressApp");
 
+        //Set the application icon.
+        this.primaryStage.getIcons().add(new Image("file:resources/images/if_Contacts_27546.png"));
+        
         initRootLayout();
 
         showPersonOverview();
@@ -119,6 +123,7 @@ public class MainApp extends Application {
             dialogStage.setTitle("Edit Person");
             dialogStage.initModality(Modality.WINDOW_MODAL);
             dialogStage.initOwner(primaryStage);
+            
             Scene scene = new Scene(page);
             dialogStage.setScene(scene);
 
@@ -127,6 +132,8 @@ public class MainApp extends Application {
             controller.setDialogStage(dialogStage);
             controller.setPerson(person);
 
+            dialogStage.getIcons().add(new Image("file:resources/images/if_Contacts_27546.png"));
+            
             // Show the dialog and wait until the user closes it
             dialogStage.showAndWait();
 
